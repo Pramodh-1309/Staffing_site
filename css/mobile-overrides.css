@@ -1,0 +1,292 @@
+/* ============================================================
+   Mobile/mobile-overrides.css
+   Mobile-specific UI enhancements & touch optimizations
+   Loaded on ALL pages via Site.master
+   ============================================================ */
+
+/* ── TOUCH TARGET SIZES (minimum 44px per Apple/Google guidelines) ── */
+@media (max-width: 768px) {
+
+  /* All buttons and links — minimum tap size */
+  .btn, button, .nav-cta,
+  .footer-links a, .mobile-menu a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-links a {
+    padding: 0.3rem 0;
+    display: block;
+  }
+
+  /* ── NAVBAR MOBILE ── */
+  nav#navbar {
+    padding: 1rem 5%;
+  }
+
+  .nav-logo {
+    font-size: 1.25rem;
+  }
+
+  /* ── HERO MOBILE ── */
+  .hero-content {
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.9rem, 7.5vw, 2.8rem);
+    line-height: 1.15;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-btns .btn {
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-stats {
+    gap: 1.5rem;
+    padding-top: 2rem;
+    margin-top: 2rem;
+  }
+
+  .stat-num { font-size: 1.8rem; }
+
+  /* ── PAGE HERO (inner pages) ── */
+  .page-hero {
+    min-height: 30vh;
+    padding: 7rem 6% 2.5rem;
+  }
+
+  .page-hero-title {
+    font-size: clamp(1.8rem, 6.5vw, 2.6rem);
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 3.5rem 5%;
+  }
+
+  .section-title {
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+  }
+
+  /* ── GRIDS → single column ── */
+  .grid-2, .grid-3, .grid-4,
+  .about-grid, .mfg-grid, .export-grid,
+  .contact-grid, .private-label-grid,
+  .strategy-steps, .storage-grid,
+  .models-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* ── CARDS ── */
+  .card, .product-card, .why-card,
+  .quality-card, .brand-card,
+  .market-card, .model-card,
+  .eq-card, .sustain-card {
+    padding: 1.5rem;
+  }
+
+  /* ── PRODUCT TABS (horizontal scroll on mobile) ── */
+  .product-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .product-tabs::-webkit-scrollbar { display: none; }
+
+  .tab-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 0.78rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* ── PRODUCT DETAIL ── */
+  .product-detail {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .product-visual { height: 220px; font-size: 5rem; }
+
+  /* ── CONTACT FORM ── */
+  .form-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .form-wrap { padding: 1.8rem 1.2rem; }
+
+  .form-submit {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ── CTA BOX ── */
+  .cta-box {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .cta-opportunities {
+    gap: 0.5rem;
+  }
+
+  .pill {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.9rem;
+  }
+
+  /* ── FOOTER ── */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand { grid-column: span 2; }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  /* ── BRAND TIMELINE ── */
+  .brand-timeline {
+    flex-direction: column;
+  }
+
+  .brand-timeline::before {
+    top: 0; bottom: 0; left: 15px;
+    width: 2px; height: auto;
+    background: linear-gradient(180deg, var(--gold), rgba(200,151,42,0.2));
+  }
+
+  .bt-item { text-align: left; padding-left: 3rem; }
+  .bt-dot { position: absolute; left: 8px; margin: 0; }
+
+  /* ── FACILITY MAP ── */
+  .facility-map {
+    grid-template-columns: 1fr !important;
+  }
+  .facility-zone.featured { grid-row: span 1 !important; }
+
+  /* ── MARKETS VISUAL ── */
+  .markets-visual {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* ── BACK TO TOP ── */
+  #backToTop {
+    bottom: 1.2rem;
+    right: 1.2rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+/* ── SMALL PHONES: max 420px ── */
+@media (max-width: 420px) {
+  .hero-title { font-size: 1.7rem; }
+  .page-hero-title { font-size: 1.6rem; }
+  .section-title { font-size: 1.5rem; }
+
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-brand { grid-column: span 1; }
+
+  .markets-visual { grid-template-columns: 1fr; }
+
+  section { padding: 3rem 4%; }
+}
+
+/* ── LANDSCAPE PHONES ── */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-content { padding: 5rem 1.5rem 2rem; }
+  #home { min-height: 100svh; }
+  .page-hero { min-height: 40vw; }
+}
+
+/* ── TABLET: 769px – 1024px ── */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr; }
+
+  .hero-title { font-size: 3.2rem; }
+
+  section { padding: 4.5rem 5%; }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-brand { grid-column: span 2; }
+
+  .strategy-steps { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+/* ── TOUCH DEVICES: remove hover states (prevents sticky hover) ── */
+@media (hover: none) {
+  .product-card:hover,
+  .why-card:hover,
+  .card:hover,
+  .brand-card:hover,
+  .model-card:hover {
+    transform: none;
+    border-color: var(--border);
+  }
+
+  /* Keep visual feedback with active state instead */
+  .product-card:active,
+  .why-card:active,
+  .card:active {
+    transform: scale(0.98);
+    border-color: var(--border-hover);
+  }
+
+  .btn:hover { transform: none; }
+  .btn:active { transform: scale(0.97); opacity: 0.9; }
+}
+
+/* ── SAFE AREA (iPhone notch / Dynamic Island) ── */
+@supports (padding: max(0px)) {
+  nav#navbar {
+    padding-left: max(5%, env(safe-area-inset-left));
+    padding-right: max(5%, env(safe-area-inset-right));
+  }
+
+  footer {
+    padding-bottom: max(2.5rem, env(safe-area-inset-bottom));
+  }
+
+  #backToTop {
+    bottom: max(1.2rem, env(safe-area-inset-bottom));
+    right: max(1.2rem, env(safe-area-inset-right));
+  }
+}
+
+/* ── REDUCED MOTION (accessibility) ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal { opacity: 1 !important; transform: none !important; }
+}

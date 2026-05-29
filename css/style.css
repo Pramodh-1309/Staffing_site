@@ -1,0 +1,647 @@
+/* ============================================================
+   style.css — Aivirtrix
+   Palette: White 65% · Black · Blue accents
+   Topbar: White | Navbar: White | Footer: Black
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap');
+
+/* ═══ CSS VARIABLES ═══ */
+:root {
+  /* Core */
+  --white:        #ffffff;
+  --off-white:    #f8f9fb;
+  --gray-light:   #eef0f4;
+  --gray-mid:     #d1d5db;
+  --black:        #0a0a0a;
+  --black-soft:   #111318;
+  --black-mid:    #1c1f26;
+
+  /* Blue */
+  --blue:         #1d4ed8;
+  --blue-mid:     #2563eb;
+  --blue-light:   #3b82f6;
+  --blue-pale:    #eff6ff;
+  --blue-xpale:   #f0f7ff;
+  --blue-border:  rgba(37,99,235,0.18);
+  --blue-shadow:  rgba(37,99,235,0.15);
+
+  /* Text */
+  --txt-black:    #0a0a0a;
+  --txt-body:     #1f2937;
+  --txt-muted:    #6b7280;
+  --txt-light:    rgba(255,255,255,0.85);
+  --txt-dim:      rgba(255,255,255,0.5);
+
+  /* Borders */
+  --bdr-light:    rgba(0,0,0,0.09);
+  --bdr-blue:     rgba(37,99,235,0.2);
+  --bdr-white:    rgba(255,255,255,0.12);
+
+  /* Legacy aliases — keeps old inline styles from breaking */
+  --gold:           #2563eb;
+  --gold-light:     #3b82f6;
+  --gold-pale:      rgba(37,99,235,0.08);
+  --green-deep:     #111318;
+  --green-mid:      #1c1f26;
+  --green-light:    #2563eb;
+  --dark:           #ffffff;
+  --dark-2:         #f8f9fb;
+  --dark-3:         #eef0f4;
+  --cream:          #0a0a0a;
+  --cream-muted:    #4b5563;
+  --cream-dim:      #9ca3af;
+  --text-muted:     #6b7280;
+  --border:         rgba(0,0,0,0.09);
+  --border-hover:   rgba(37,99,235,0.4);
+  --font-display:   'Poppins', sans-serif;
+  --font-body:      'Poppins', sans-serif;
+  --section-pad:    6rem 5%;
+  --max-width:      1200px;
+  --ease:           cubic-bezier(0.23,1,0.32,1);
+  --speed:          0.35s;
+}
+
+/* ═══ RESET ═══ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:var(--white);color:var(--txt-body);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul,ol{list-style:none}
+button,input,select,textarea{font-family:var(--font-body);outline:none}
+
+/* ═══ TYPOGRAPHY ═══ */
+.section-tag{display:inline-block;color:var(--blue-mid);font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:.9rem}
+.section-title{font-family:var(--font-display);font-size:clamp(1.9rem,3.8vw,3.1rem);font-weight:lighter;line-height:1.16;margin-bottom:1.1rem;color:var(--black)}
+.section-title em{font-style:italic;color:var(--blue-mid)}
+.section-body{font-size:1rem;font-weight:300;line-height:1.92;color:var(--txt-body);}
+.divider{width:52px;height:3px;background:linear-gradient(90deg,var(--blue-mid),transparent);margin:1.1rem 0 1.8rem}
+.divider.center{margin-left:auto;margin-right:auto}
+.text-center{text-align:center}
+.text-muted{color:var(--txt-muted)}
+section{padding:var(--section-pad)}
+.container{max-width:var(--max-width);margin:0 auto}
+
+/* ═══ BUTTONS ═══ */
+.btn{display:inline-block;padding:.85rem 2.1rem;border-radius:3px;font-size:.84rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;transition:all var(--speed) var(--ease);border:2px solid transparent}
+.btn-primary{background:#ffffff;color:#000000;border-color:#000000}
+.btn-primary:hover{background:var(--blue);border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px var(--blue-shadow)}
+.btn-outline{background:transparent;color:var(--black);border-color:var(--black)}
+.btn-outline:hover{background:var(--black);color:#fff;transform:translateY(-2px)}
+.btn-outline-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.btn-outline-white:hover{background:#fff;color:var(--black);transform:translateY(-2px)}
+.btn-gold-outline,.btn-blue-outline{background:transparent;color:var(--blue-mid);border-color:var(--blue-mid)}
+.btn-gold-outline:hover,.btn-blue-outline:hover{background:var(--blue-mid);color:#fff;transform:translateY(-2px)}
+
+/* ═══ CARDS ═══ */
+.card{background:#fff;border:1px solid var(--bdr-light);border-radius:6px;padding:2rem;transition:border-color var(--speed) var(--ease),transform var(--speed) var(--ease),box-shadow var(--speed) var(--ease)}
+.card:hover{border-color:var(--bdr-blue);transform:translateY(-4px);box-shadow:0 12px 32px var(--blue-shadow)}
+
+/* ═══ TAGS / PILLS ═══ */
+.tag{display:inline-block;background:var(--blue-pale);border:1px solid var(--bdr-blue);color:var(--blue-mid);padding:.2rem .75rem;border-radius:2px;font-size:.71rem;font-weight:600;letter-spacing:.04em}
+.pill{display:inline-block;background:var(--blue-pale);border:1px solid var(--bdr-blue);color:var(--blue-mid);padding:.38rem 1rem;border-radius:50px;font-size:.79rem;font-weight:500}
+
+/* ═══ SCROLL REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ═══ BACKGROUND VARIANTS ═══ */
+/* White sections (65% of site) */
+.bg-white,.bg-dark{background:#fff}
+.bg-light,.bg-dark-2{background:var(--off-white)}
+.bg-gray,.bg-dark-3{background:var(--gray-light)}
+.bg-gradient-green,.bg-blue-pale{background:linear-gradient(135deg,var(--blue-xpale),var(--blue-pale))}
+
+/* Black sections */
+.bg-black,.black-section{background:var(--black-soft);color:#fff}
+.black-section .section-title{color:#fff}
+.black-section .section-tag{color:var(--blue-light)}
+.black-section .section-body{color:rgba(255,255,255,.68)}
+.black-section .divider{background:linear-gradient(90deg,var(--blue-light),transparent)}
+.black-section .card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.09);color:#fff}
+.black-section .card:hover{border-color:var(--blue-light);box-shadow:0 12px 32px rgba(59,130,246,.2)}
+.black-section .text-muted{color:rgba(255,255,255,.48)}
+/* Inline dark section styles compatibility */
+section[style*="green-deep"],section[style*="green-mid"],section[style*="1A3A1A"],
+section[style*="1A3A2A"],section[style*="0E1F14"]{
+  background:var(--black-soft) !important;
+  color:#fff;
+}
+
+/* Blue sections */
+.blue-section{background:var(--blue-mid);color:#fff}
+.blue-section .section-title{color:#fff}
+.blue-section .section-tag{color:rgba(255,255,255,.7)}
+.blue-section .section-body{color:rgba(255,255,255,.8)}
+.blue-section .divider{background:linear-gradient(90deg,rgba(255,255,255,.55),transparent)}
+
+/* ═══ PAGE HERO (inner pages — BLACK) ═══ */
+/* page-hero: see full definition in vayuputra section below */
+.page-hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(37,99,235,.05) 80px),repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(37,99,235,.05) 80px);pointer-events:none}
+.page-hero::after{content:'';position:absolute;top:0;right:0;width:45%;height:100%;background:linear-gradient(135deg,transparent,rgba(37,99,235,.1));pointer-events:none}
+.page-hero-content{position:relative;z-index:2;max-width:var(--max-width);width:100%}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.77rem;color:rgba(255,255,255,.38);margin-bottom:1.2rem}
+.breadcrumb a{color:var(--blue-light)}
+.page-hero-title{font-family:var(--font-display);font-size:clamp(2.3rem,5vw,4rem);font-weight:lighter;line-height:1.1;color:#fff}
+.page-hero-title em{font-style:italic;color:var(--blue-light)}
+.page-hero-logo-bg{position:absolute;right:5%;bottom:0;height:100%;max-height:160px;opacity:.05;pointer-events:none;filter:brightness(10)}
+
+/* ═══ GRIDS ═══ */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.grid-auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+
+/* ═══ FOOTER — BLACK ═══ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ═══ LOGO IMAGE ═══ */
+
+
+
+/* ═══ PROCESS STEPS ═══ */
+.process-steps{display:flex;flex-direction:column;gap:0;max-width:680px}
+.process-step{display:flex;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--bdr-light);transition:padding-left .3s}
+.process-step:last-child{border-bottom:none}
+.process-step:hover{padding-left:.5rem}
+.step-line{display:flex;flex-direction:column;align-items:center;min-width:40px}
+.step-dot{width:13px;height:13px;border-radius:50%;background:var(--blue-mid);flex-shrink:0;box-shadow:0 0 10px rgba(37,99,235,.4);transition:box-shadow .3s}
+.process-step:hover .step-dot{box-shadow:0 0 20px rgba(37,99,235,.8)}
+.step-connector{flex:1;width:1px;background:var(--bdr-blue);margin-top:4px}
+.step-num{font-family:var(--font-display);font-size:.74rem;color:var(--blue-mid);font-weight:700;margin-top:.3rem}
+.step-title{font-weight:700;font-size:.97rem;margin-bottom:.4rem;color:var(--black)}
+.step-body{font-size:.84rem;color:var(--txt-muted);line-height:1.8}
+
+/* ═══ INFRA / ICON CARDS ═══ */
+.infra-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:var(--max-width);margin:3rem auto 0}
+.infra-card{background:#fff;border:1px solid var(--bdr-light);border-radius:6px;padding:2rem;text-align:center;transition:all .3s var(--ease)}
+.infra-card:hover{border-color:var(--bdr-blue);transform:translateY(-4px);box-shadow:0 12px 32px var(--blue-shadow)}
+
+/* ═══ STAT ITEMS ═══ */
+.stat-num{font-family:var(--font-display);font-size:2.4rem;font-weight:lighter;color:var(--blue-mid);line-height:1}
+.stat-label{font-size:.71rem;letter-spacing:.13em;text-transform:uppercase;color:var(--txt-muted);margin-top:.3rem}
+
+/* ═══ OVERRIDE: fix any lingering gold/green inline colours on existing pages ═══ */
+/* These rules convert old dark-theme card/box styles to light theme */
+.card[style*="green"],
+div[style*="green-deep"],
+div[style*="green-mid"],
+div[style*="1A3A"],
+div[style*="2D5A"],
+div[style*="rgba(26,58"],
+div[style*="rgba(200,151"] {
+  background: var(--off-white) !important;
+  border-color: var(--bdr-blue) !important;
+  color: var(--txt-body) !important;
+}
+
+/* ============================================================
+   SITE FOOTER — Aivirtrix
+   ============================================================ */
+.site-footer {
+  background: #000000;
+  border-top: 3px solid #2563eb;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── TOP SECTION ── */
+.sf-top { padding: 4rem 5% 3rem; }
+.sf-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr 1.4fr;
+  gap: 3rem;
+}
+
+/* ── BRAND COLUMN ── */
+.sf-logo { display: inline-block; text-decoration: none; margin-bottom: 1rem; }
+.sf-logo-img { height: 60px; width: auto; display: block; object-fit: contain; opacity: .9; transition: opacity .25s; }
+.sf-logo:hover .sf-logo-img { opacity: 1; }
+.sf-tagline { font-size: .8rem; color: rgba(255,255,255,.38); line-height: 1.85; max-width: 260px; margin-bottom: 1.5rem; }
+
+/* ── SOCIAL ICONS ── */
+.sf-social { display: flex; gap: .6rem; margin-bottom: 1.5rem; }
+.sf-social-link {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.5);
+  transition: all .22s;
+  text-decoration: none;
+}
+.sf-social-link svg { width: 16px; height: 16px; }
+.sf-social-link:hover { background: #2563eb; border-color: #2563eb; color: #fff; transform: translateY(-2px); }
+
+/* ── CONTACT INFO ── */
+.sf-contact { display: flex; flex-direction: column; gap: .65rem; }
+.sf-contact-item {
+  display: flex; align-items: flex-start; gap: .55rem;
+  color: rgba(255,255,255,.42);
+  font-size: .78rem;
+  text-decoration: none;
+  transition: color .2s;
+  line-height: 1.5;
+}
+.sf-contact-item:hover { color: #3b82f6; }
+.sf-contact-item svg { width: 14px; height: 14px; flex-shrink: 0; margin-top: 2px; stroke: #2563eb; }
+
+/* ── LINK COLUMNS ── */
+.sf-col { }
+.sf-col-title {
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: #3b82f6;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.sf-links {
+  list-style: none;
+  padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: .55rem;
+}
+.sf-links a {
+  color: rgba(255,255,255,.38);
+  font-size: .82rem;
+  text-decoration: none;
+  transition: color .2s, padding-left .2s;
+  display: inline-block;
+}
+.sf-links a:hover { color: #fff; padding-left: 4px; }
+/* TODO links — visually same but easy to find and update later */
+.sf-todo { /* no extra style needed — just a marker class */ }
+
+/* ── NEWSLETTER ── */
+.sf-newsletter { }
+.sf-newsletter-sub {
+  font-size: .76rem;
+  color: rgba(255,255,255,.38);
+  line-height: 1.7;
+  margin-bottom: .85rem;
+}
+.sf-newsletter-form { display: flex; flex-direction: column; gap: .5rem; }
+.sf-newsletter-input {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 6px;
+  padding: .65rem .9rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: .78rem;
+  color: #fff;
+  outline: none;
+  transition: border-color .2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.sf-newsletter-input::placeholder { color: rgba(255,255,255,.22); }
+.sf-newsletter-input:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,.12); }
+.sf-newsletter-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: .65rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s, transform .15s;
+  width: 100%;
+}
+.sf-newsletter-btn:hover { background: #1d4ed8; transform: translateY(-1px); }
+
+/* ── BOTTOM BAR ── */
+.sf-bottom {
+  border-top: 1px solid rgba(255,255,255,.07);
+  padding: 1.4rem 5%;
+}
+.sf-bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+.sf-copy { font-size: .74rem; color: rgba(255,255,255,.25); }
+.sf-legal { display: flex; align-items: center; gap: .5rem; }
+.sf-legal a { font-size: .74rem; color: rgba(255,255,255,.32); text-decoration: none; transition: color .2s; }
+.sf-legal a:hover { color: #3b82f6; }
+.sf-legal-sep { color: rgba(255,255,255,.18); font-size: .74rem; }
+.sf-bottom-web { font-size: .74rem; color: #3b82f6; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .sf-inner { grid-template-columns: 1.5fr 1fr 1fr; gap: 2.5rem; }
+  .sf-brand-col { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+}
+@media (max-width: 700px) {
+  .sf-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .sf-brand-col { grid-column: 1 / -1; grid-template-columns: 1fr; }
+  .sf-tagline { max-width: 100%; }
+  .sf-bottom-inner { flex-direction: column; text-align: center; gap: .5rem; }
+}
+@media (max-width: 480px) {
+  .sf-inner { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   LEGAL MODALS — Privacy Policy & Terms & Conditions
+   ============================================================ */
+.legal-modal-backdrop {
+  position: fixed; inset: 0; z-index: 99999;
+  background: rgba(0,0,0,.65);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 1.5rem;
+  opacity: 0; pointer-events: none;
+  transition: opacity .25s;
+}
+.legal-modal-backdrop.open {
+  opacity: 1; pointer-events: all;
+}
+.legal-modal {
+  background: #fff;
+  border-radius: 14px;
+  width: 100%; max-width: 680px;
+  max-height: 85vh;
+  display: flex; flex-direction: column;
+  box-shadow: 0 24px 80px rgba(0,0,0,.3);
+  transform: translateY(20px);
+  transition: transform .28s cubic-bezier(.4,0,.2,1);
+}
+.legal-modal-backdrop.open .legal-modal {
+  transform: translateY(0);
+}
+.legal-modal-head {
+  padding: 1.4rem 1.8rem;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
+}
+.legal-modal-title {
+  font-size: 1.05rem; font-weight: 800; color: #0a0a0a;
+  display: flex; align-items: center; gap: .6rem;
+}
+.legal-modal-title-icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: #eff6ff; display: flex; align-items: center;
+  justify-content: center; font-size: .95rem; flex-shrink: 0;
+}
+.legal-modal-close {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: #f3f4f6; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: #6b7280; font-size: 1rem; transition: all .18s;
+  flex-shrink: 0;
+}
+.legal-modal-close:hover { background: #fee2e2; color: #dc2626; }
+.legal-modal-body {
+  padding: 1.6rem 1.8rem;
+  overflow-y: auto;
+  flex: 1;
+}
+.legal-modal-body::-webkit-scrollbar { width: 5px; }
+.legal-modal-body::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 4px; }
+.legal-section { margin-bottom: 1.6rem; }
+.legal-section:last-child { margin-bottom: 0; }
+.legal-section-title {
+  font-size: .72rem; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: #2563eb;
+  margin-bottom: .6rem; padding-bottom: .4rem;
+  border-bottom: 2px solid #eff6ff;
+}
+.legal-section-body {
+  font-size: .85rem; color: #374151; line-height: 1.8;
+}
+.legal-section-body p { margin-bottom: .7rem; }
+.legal-section-body p:last-child { margin-bottom: 0; }
+.legal-modal-foot {
+  padding: 1rem 1.8rem;
+  border-top: 1px solid rgba(0,0,0,.07);
+  background: #f9fafb;
+  border-radius: 0 0 14px 14px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0; flex-wrap: wrap; gap: .5rem;
+}
+.legal-modal-foot-note {
+  font-size: .72rem; color: #9ca3af;
+}
+.legal-modal-foot-btn {
+  background: #2563eb; color: #fff; border: none;
+  border-radius: 7px; padding: .55rem 1.3rem;
+  font-family: 'Poppins', sans-serif; font-size: .78rem;
+  font-weight: 700; cursor: pointer; transition: background .18s;
+}
+.legal-modal-foot-btn:hover { background: #1d4ed8; }
+@media (max-width: 600px) {
+  .legal-modal-head, .legal-modal-body, .legal-modal-foot { padding-left: 1.2rem; padding-right: 1.2rem; }
+}
+
+/* ═══ VAYUPUTRA PAGE-HERO — shared across all vayuputra pages ═══ */
+.page-hero {
+  min-height: 30vh;
+  background: #0f172a;
+  background-image: radial-gradient(ellipse 65% 55% at 12% 55%, rgba(37,99,235,.24) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(96,165,250,.1) 0%, transparent 60%),
+    linear-gradient(135deg, #060d1f 0%, #0d1b3e 40%, #0a0f1e 100%);
+  padding: 9.5rem 3.5% 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 28px 28px; pointer-events: none;
+}
+.page-hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent, #2563eb, #60a5fa, #2563eb, transparent);
+}
+.page-hero-content, .hero-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+.breadcrumb { display:flex; align-items:center; gap:.4rem; font-size:.7rem; font-weight:600;
+  color:rgba(255,255,255,.38); letter-spacing:.08em; text-transform:uppercase; margin-bottom:1.4rem; }
+.breadcrumb a { color:#60a5fa; }
+.breadcrumb a:hover { color:#fff; }
+.page-hero-title { font-size:clamp(1.8rem,3vw,2.8rem); font-weight:lighter; color:#fff; line-height:1.1;
+  letter-spacing:-.02em; margin-bottom:1.1rem; }
+.page-hero-title em { font-style:italic; color:#60a5fa; }
+.page-hero-sub { font-size:.93rem; color:rgba(255,255,255,.55); max-width:680px; line-height:1.78; }
+.hero-stats { display:flex; gap:3rem; margin-top:2.8rem; flex-wrap:wrap; }
+.stat-num { font-size:2.3rem; font-weight:lighter; color:#60a5fa; line-height:1; }
+.stat-lbl { font-size:.6rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:rgba(255,255,255,.38); margin-top:.3rem; }
+
+/* ═══ VAYUPUTRA SERVICES — tabs ═══ */
+.tabs-wrap { background:#f1f5f9; border-bottom:2px solid #e2e8f0; position:sticky; top:98px; z-index:200; }
+.tabs-inner { display:flex; max-width:1200px; margin:0 auto; padding:0 5%; overflow-x:auto; }
+.tab-btn { padding:1.1rem 2.8rem; font-family:'Poppins',sans-serif; font-size:.76rem; font-weight:800;
+  letter-spacing:.12em; text-transform:uppercase; border:none; background:none; cursor:pointer;
+  color:#64748b; border-bottom:3px solid transparent; margin-bottom:-2px; transition:all .25s; white-space:nowrap; }
+.tab-btn.active, .tab-btn:hover { color:#2563eb; border-bottom-color:#2563eb; }
+.tab-panel { display:none; }
+.tab-panel.active { display:block; }
+
+/* ═══ VAYUPUTRA SERVICE CARDS ═══ */
+.svc-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:2rem; margin-bottom:4rem; }
+.svc-card { background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:2.3rem 2rem;
+  transition:all .35s; position:relative; overflow:hidden; }
+.svc-card::after { content:''; position:absolute; inset:0; background:linear-gradient(135deg,#2563eb,#1d4ed8);
+  opacity:0; transition:opacity .35s; border-radius:12px; z-index:0; }
+.svc-card:hover { transform:translateY(-7px); box-shadow:0 24px 56px rgba(37,99,235,.13); border-color:transparent; }
+.svc-card:hover::after { opacity:1; }
+.svc-card > * { position:relative; z-index:1; }
+.svc-card:hover .svc-tag,.svc-card:hover .svc-name,.svc-card:hover .svc-desc,.svc-card:hover .svc-list li,
+.svc-card:hover .card-cta { color:#fff !important; }
+.svc-card:hover .svc-icon { background:rgba(255,255,255,.15) !important; }
+.svc-card:hover .svc-list li::before { background:rgba(255,255,255,.8) !important; }
+.svc-card:hover .card-cta { border-top-color:rgba(255,255,255,.25) !important; }
+.svc-icon { width:52px; height:52px; border-radius:12px; background:#eff6ff; display:flex; align-items:center;
+  justify-content:center; font-size:1.5rem; margin-bottom:1.2rem; transition:background .35s; }
+.svc-tag { font-size:.6rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#2563eb;
+  display:block; margin-bottom:.4rem; transition:color .35s; }
+.svc-name { font-size:1.08rem; font-weight:800; color:#0d1117; margin-bottom:.75rem; line-height:1.35; transition:color .35s; }
+.svc-desc { font-size:.82rem; color:#64748b; line-height:1.75; margin-bottom:1.2rem; transition:color .35s; }
+.svc-list { padding:0; margin:0 0 1.4rem; display:flex; flex-direction:column; gap:.4rem; }
+.svc-list li { font-size:.79rem; color:#475569; display:flex; align-items:flex-start; gap:.5rem; line-height:1.5; transition:color .35s; }
+.svc-list li::before { content:''; width:5px; height:5px; border-radius:50%; background:#2563eb;
+  flex-shrink:0; margin-top:.46em; transition:background .35s; }
+.card-cta { display:inline-flex; align-items:center; gap:.4rem; font-size:.72rem; font-weight:800;
+  letter-spacing:.1em; text-transform:uppercase; color:#2563eb; padding-top:.9rem;
+  border-top:1px solid #e2e8f0; width:100%; transition:all .35s; }
+.card-cta::after { content:'→'; transition:transform .25s; }
+.svc-card:hover .card-cta::after { transform:translateX(5px); }
+
+/* ═══ VAYUPUTRA INDUSTRY PROCESS STEPS ═══ */
+.process-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; margin-bottom:4rem; }
+.process-step { background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:1.8rem 1.5rem;
+  transition:all .3s; position:relative; overflow:visible; word-wrap:break-word; overflow-wrap:break-word; }
+.process-step::before { content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg,#2563eb,#60a5fa); opacity:0; transition:opacity .3s; }
+.process-step:hover { border-color:#bfdbfe; box-shadow:0 14px 36px rgba(37,99,235,.13); transform:translateY(-5px); }
+.process-step:hover::before { opacity:1; }
+.step-num { width:36px; height:36px; border-radius:50%; background:#2563eb; color:#fff; font-size:.78rem;
+  font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
+.step-title { font-size:.88rem; font-weight:800; color:#0d1117; margin-bottom:.45rem; }
+.step-text { font-size:.76rem; color:#64748b; line-height:1.65; }
+
+/* ═══ VAYUPUTRA BENEFITS ═══ */
+.benefits-list { display:flex; flex-direction:column; gap:.75rem; margin-bottom:4rem; }
+.benefit-row { display:flex; align-items:flex-start; gap:1rem; padding:1rem 1.3rem; background:#fff;
+  border:1px solid #e2e8f0; border-radius:10px; transition:all .25s; }
+.benefit-row:hover { border-color:#bfdbfe; box-shadow:0 6px 22px rgba(37,99,235,.1); transform:translateX(4px); }
+.benefit-icon { width:40px; height:40px; border-radius:9px; background:#eff6ff; display:flex;
+  align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+.benefit-body strong { display:block; font-size:.86rem; font-weight:800; color:#0d1117; margin-bottom:.15rem; }
+.benefit-body span { font-size:.78rem; color:#64748b; line-height:1.55; }
+
+/* ═══ VAYUPUTRA FAQ ═══ */
+.faq-list { display:flex; flex-direction:column; gap:.6rem; margin-bottom:4rem; }
+.faq-item { border:1px solid #e2e8f0; border-radius:10px; overflow:hidden; background:#fff; }
+.faq-q { width:100%; text-align:left; background:none; border:none; padding:1.1rem 1.3rem;
+  font-family:'Poppins',sans-serif; font-size:.85rem; font-weight:700; color:#0d1117;
+  cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:1rem; transition:color .2s; }
+.faq-q::after { content:'+'; font-size:1.3rem; color:#2563eb; flex-shrink:0; transition:transform .25s; }
+.faq-q.open::after { transform:rotate(45deg); }
+.faq-q:hover { color:#2563eb; }
+.faq-a { font-size:.82rem; color:#64748b; line-height:1.75; padding:0 1.3rem;
+  max-height:0; overflow:hidden; transition:max-height .35s, padding .3s; }
+.faq-a.open { max-height:300px; padding:0 1.3rem 1.1rem; }
+
+/* ═══ VAYUPUTRA IND-SPLIT (industry detail pages) ═══ */
+.ind-split { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-bottom:4rem; }
+.ind-img-wrap { position:relative; border-radius:14px; overflow:hidden; height:420px;
+  box-shadow:0 24px 64px rgba(0,0,0,.16); background:linear-gradient(135deg,#0f172a,#1e3a5f);
+  display:flex; align-items:center; justify-content:center; }
+.ind-img-wrap img { width:100%; height:100%; object-fit:cover; }
+.ind-badge { position:absolute; bottom:1.4rem; left:1.4rem; background:#fff; border-radius:10px;
+  padding:.8rem 1.2rem; box-shadow:0 6px 24px rgba(0,0,0,.14); }
+.ind-badge-num { font-size:1.4rem; font-weight:lighter; color:#2563eb; line-height:1; }
+.ind-badge-lbl { font-size:.62rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#64748b; line-height:1.35; }
+.ind-tags-wrap h3 { font-size:1rem; font-weight:800; color:#0d1117; margin-bottom:1rem;
+  padding-bottom:.7rem; border-bottom:2px solid #eff6ff; }
+.ind-tags { display:flex; flex-wrap:wrap; gap:.5rem; }
+.ind-tag { background:#fff; border:1px solid #e2e8f0; border-radius:7px; padding:.38rem .88rem;
+  font-size:.73rem; font-weight:600; color:#334155; transition:all .22s; cursor:default; }
+.ind-tag:hover { border-color:#bfdbfe; color:#2563eb; background:#eff6ff; transform:translateY(-1px); }
+
+/* ═══ VAYUPUTRA SUBCATEGORY CARDS (operations etc) ═══ */
+.subcat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.6rem; margin-bottom:4rem; }
+.subcat-card { background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:1.6rem 1.8rem; transition:all .3s; }
+.subcat-card:hover { border-color:#bfdbfe; transform:translateY(-4px); box-shadow:0 12px 32px rgba(37,99,235,.1); }
+.subcat-name { font-size:.78rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:#2563eb; margin-bottom:1rem; padding-bottom:.6rem; border-bottom:2px solid #eff6ff; }
+.subcat-roles { list-style:none; padding:0; margin:0; }
+.subcat-roles li { font-size:.82rem; color:#444; padding:.28rem 0; display:flex; align-items:center;
+  gap:.5rem; line-height:1.4; }
+.subcat-roles li::before { content:''; width:5px; height:5px; border-radius:50%; background:#2563eb; flex-shrink:0; }
+
+/* ═══ VAYUPUTRA CAT-HEADER ═══ */
+.cat-header { display:flex; align-items:center; gap:1.4rem; margin-bottom:2.5rem; }
+.cat-num { width:54px; height:54px; border-radius:50%; background:#2563eb; color:#fff; font-size:1.3rem;
+  font-weight:lighter; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  box-shadow:0 6px 20px rgba(37,99,235,.35); }
+.cat-title .section-tag, .cat-title h2 { margin:0; }
+.cat-title h2 { font-size:clamp(1.7rem,3vw,2.4rem); font-weight:lighter; color:#0d1117;
+  letter-spacing:-.02em; line-height:1.15; }
+.cat-title h2 em { font-style:italic; color:#2563eb; }
+
+/* ═══ VAYUPUTRA CTA SECTION ═══ */
+.cta-section { background:#0f172a; background-image:radial-gradient(ellipse 50% 60% at 12% 55%,rgba(37,99,235,.18) 0%,transparent 65%);
+  padding:5.5rem 5%; text-align:center; position:relative; overflow:hidden; }
+.cta-section::before { content:''; position:absolute; inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.03) 1px,transparent 1px); background-size:28px 28px; pointer-events:none; }
+.cta-section .cta-inner { position:relative; z-index:1; max-width:1200px; margin:0 auto; }
+.cta-section h2 { font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:lighter; color:#fff; letter-spacing:-.02em; margin-bottom:1rem; }
+.cta-section h2 em { color:#60a5fa; font-style:italic; }
+.cta-section p { max-width:560px; margin:0 auto 2.5rem; color:rgba(255,255,255,.55); font-size:.93rem; line-height:1.75; }
+.cta-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+
+/* ═══ VAYUPUTRA IND-CTA (industry page CTA) ═══ */
+.ind-cta { background:#0f172a; color:#fff; padding:5rem 5%; text-align:center; }
+.ind-cta h2 { font-size:clamp(1.6rem,3vw,2.4rem); font-weight:700; margin-bottom:1rem; color:#fff; }
+.ind-cta p { max-width:560px; margin:0 auto 2rem; color:rgba(255,255,255,.65); font-size:.95rem; }
+.ind-cta-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+
+/* ═══ IND-HERO-STATS ═══ */
+.ind-hero-stats { display:flex; gap:3rem; margin-top:2.5rem; flex-wrap:wrap; }
+.ind-stat { text-align:center; }
+.ind-stat-num { font-size:2.2rem; font-weight:800; color:#60a5fa; line-height:1; }
+.ind-stat-lbl { font-size:.72rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+  color:rgba(255,255,255,.55); margin-top:.35rem; }
+
+/* ═══ WHY CARDS (vayuputra version light) ═══ */
+.why-grid-light { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.4rem; margin-bottom:4rem; }
+.why-card-light { background:#eff6ff; border-radius:10px; padding:1.8rem; text-align:center; transition:all .3s; }
+.why-card-light:hover { background:#2563eb; transform:translateY(-4px); box-shadow:0 16px 40px rgba(37,99,235,.2); }
+.why-card-light:hover .why-title,.why-card-light:hover .why-text { color:#fff; }
+
+/* ═══ RESPONSIVE FIXES ═══ */
+@media (max-width:900px) {
+  .ind-split { grid-template-columns:1fr; gap:2.5rem; }
+  .ind-img-wrap { height:260px; }
+  .reach-grid, .how-grid { grid-template-columns:1fr; }
+}
+@media (max-width:640px) {
+  .ind-hero-stats { gap:1.5rem; }
+  .cat-header { flex-direction:column; align-items:flex-start; gap:.8rem; }
+  .page-hero { padding:7rem 5% 3rem; }
+}

@@ -1,0 +1,75 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="MasterPages_Site" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#2563eb"/>
+  <title><asp:ContentPlaceHolder ID="PageTitle" runat="server">Aivirtrix &ndash; Global Staffing Platform</asp:ContentPlaceHolder></title>
+  <meta name="description" content="<asp:ContentPlaceHolder ID="PageDescription" runat="server">Aivirtrix &ndash; AI-powered global staffing platform connecting employers and candidates across every industry.</asp:ContentPlaceHolder>"/>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="<%= ResolveUrl("~/images/favicon.png") %>"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="<%= ResolveUrl("~/css/style.css") %>"/>
+  <link rel="stylesheet" href="<%= ResolveUrl("~/css/navbar.css") %>"/>
+  <link rel="stylesheet" href="<%= ResolveUrl("~/css/responsive.css") %>"/>
+  <link rel="stylesheet" href="<%= ResolveUrl("~/Mobile/mobile-overrides.css") %>"/>
+
+  <asp:ContentPlaceHolder ID="HeadContent" runat="server"/>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div id="topbar">
+    <div class="topbar-left">
+      <a class="topbar-item" href="mailto:info@aivirtrix.com">&#x2709; info@aivirtrix.com</a>
+      <div class="topbar-divider"></div>
+      <a class="topbar-item" href="tel:+18000000000">&#128222; +1-800-000-0000</a>
+      <div class="topbar-divider"></div>
+      <span class="topbar-item">📍 Delaware, USA</span>
+    </div>
+    <div class="topbar-right">
+      <div class="topbar-social"><a href="#" title="LinkedIn" target="_blank" rel="noopener">LinkedIn</a></div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <uc1:NavBar ID="NavBar1" runat="server" ActivePage="<%# ActivePage %>"/>
+
+  <!-- MAIN CONTENT -->
+  <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+
+  <!-- SITE FOOTER -->
+  <uc2:SiteFooter ID="SiteFooter1" runat="server"/>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" aria-label="Back to top" style="position:fixed;bottom:2rem;right:2rem;background:#2563eb;color:#fff;border:none;width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer;opacity:0;transition:opacity .3s;z-index:999;box-shadow:0 4px 16px rgba(37,99,235,.4)">&#8679;</button>
+
+  <!-- CORE JS -->
+  <script src="<%= ResolveUrl("~/js/main.js") %>"></script>
+  <script src="<%= ResolveUrl("~/js/vpstore.js") %>"></script>
+  <script src="<%= ResolveUrl("~/js/portal-widget.js") %>"></script>
+
+  <!-- LEGAL MODAL -->
+  <script>
+  function sfSubscribe(e){e.preventDefault();var btn=e.target.querySelector(".sf-newsletter-btn");btn.textContent="Subscribed!";btn.style.background="#16a34a";e.target.querySelector(".sf-newsletter-input").value="";setTimeout(function(){btn.textContent="Subscribe";btn.style.background="";},3000);}
+  var LEGAL_CONTENT={privacy:{icon:"&#128274;",title:"Privacy Policy",sections:[{title:"Data Collection & Use",body:"We respect your privacy. Data collected is used solely for recruitment and communication purposes."},{title:"Data Sharing",body:"We do not share your information without consent, except when required for job placement."},{title:"Your Rights",body:"You may request access, correction, or deletion of your data. Contact info@aivirtrix.com."}]},terms:{icon:"&#128203;",title:"Terms & Conditions",sections:[{title:"Acceptance of Terms",body:"By using our website, you agree to comply with our terms and conditions."},{title:"No Guarantee of Placement",body:"We do not guarantee job placement. Aivirtrix acts as an intermediary between employers and candidates."},{title:"User Responsibilities",body:"Users are responsible for the accuracy of information they provide."}]}};
+  function openLegalModal(type){var c=LEGAL_CONTENT[type];if(!c)return;document.getElementById("legal-modal-icon").innerHTML=c.icon;document.getElementById("legal-modal-title-text").textContent=c.title;document.getElementById("legal-modal-body").innerHTML=c.sections.map(function(s){return'<div class="legal-section"><div class="legal-section-title">'+s.title+'</div><div class="legal-section-body"><p>'+s.body+'</p></div></div>';}).join("");document.getElementById("legal-modal-backdrop").classList.add("open");document.body.style.overflow="hidden";}
+  function closeLegalModal(e){if(e&&e.target!==document.getElementById("legal-modal-backdrop"))return;document.getElementById("legal-modal-backdrop").classList.remove("open");document.body.style.overflow="";}
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeLegalModal();});
+  </script>
+  <div class="legal-modal-backdrop" id="legal-modal-backdrop" onclick="closeLegalModal(event)">
+    <div class="legal-modal" id="legal-modal">
+      <div class="legal-modal-head"><div class="legal-modal-title"><div class="legal-modal-title-icon" id="legal-modal-icon"></div><span id="legal-modal-title-text"></span></div><button class="legal-modal-close" onclick="closeLegalModal()" aria-label="Close">&#10005;</button></div>
+      <div class="legal-modal-body" id="legal-modal-body"></div>
+      <div class="legal-modal-foot"><span class="legal-modal-foot-note">Last updated: January 2026 &middot; Aivirtrix</span><button class="legal-modal-foot-btn" onclick="closeLegalModal()">Got it</button></div>
+    </div>
+  </div>
+
+  <!-- PER-PAGE SCRIPTS -->
+  <asp:ContentPlaceHolder ID="ScriptContent" runat="server"/>
+</body>
+</html>
