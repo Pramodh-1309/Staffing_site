@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us &ndash; Aivirtrix</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/navbar.css"/>
+  <link rel="stylesheet" href="../css/responsive.css"/>
+  <style>
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start;max-width:1200px;margin:0 auto}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.2rem}
+    .form-group{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.2rem}
+    .form-group label{font-size:.77rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#374151}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:.8rem 1rem;border:1.5px solid rgba(0,0,0,.1);border-radius:4px;font-size:.9rem;font-family:'Poppins',sans-serif;color:#0a0a0a;background:#fff;transition:border-color .25s,box-shadow .25s}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1);outline:none}
+    .form-group textarea{resize:vertical;min-height:130px}
+    .info-card{background:#f8f9fb;border:1px solid rgba(0,0,0,.08);border-radius:8px;padding:1.5rem;display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;transition:border-color .25s}
+    .info-card:hover{border-color:rgba(37,99,235,.28)}
+    .info-icon{font-size:1.6rem;flex-shrink:0}
+    .info-title{font-weight:700;font-size:.85rem;color:#0a0a0a;margin-bottom:.2rem}
+    .info-value{font-size:.83rem;color:#6b7280;line-height:1.7}
+    .info-value a{color:#2563eb;text-decoration:none}
+    .info-value a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+<div id="topbar">
+  <div class="topbar-left">
+    <a class="topbar-item" href="mailto:info@aivirtrix.com">&#x2709; info@aivirtrix.com</a>
+    <div class="topbar-divider"></div>
+    <a class="topbar-item" href="tel:+18000000000">&#128222; +1-800-000-0000</a>
+    <div class="topbar-divider"></div>
+    <span class="topbar-item">📍 Delaware, USA</span>
+  </div>
+  <div class="topbar-right">
+    <div class="topbar-social"><a href="#" title="LinkedIn">LinkedIn</a></div>
+  </div>
+</div>
+<nav id="navbar">
+  <a class="nav-logo" href="../index.html"><img src="../images/AI-WBG.png" alt="Aivirtrix" class="nav-logo-img"/></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li class="has-dropdown"><a href="operations.html">Industries</a>
+      <ul class="dropdown">
+        <li><a href="operations.html">Operations</a></li>
+        <li><a href="industrial.html">Industrial</a></li>
+        <li><a href="customer-service.html">Customer Service</a></li>
+        <li><a href="business-support.html">Business Support</a></li>
+        <li><a href="technical-support.html">Technical Support</a></li>
+        <li><a href="healthcare.html">Healthcare</a></li>
+        <li><a href="leadership.html">Leadership</a></li>
+      </ul>
+    </li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="contact.html" class="active">Contact Us</a></li>
+    <li><button class="portal-nav-btn" onclick="PP.open('employer')" id="portal-nav-btn"><span class="pnb-dot"></span> Portal <span class="pnb-arrow">&#9662;</span></button></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" id="closeMenu">&#10005;</button>
+  <a href="../index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="services.html">Services</a>
+  <a href="operations.html">Industries</a>
+  <a href="careers.html">Careers</a>
+  <a href="contact.html">Contact Us</a>
+  <a href="#" onclick="PP.open('employer')" class="mobile-cta">Portal</a>
+</div>
+<div class="page-hero">
+    <div class="page-hero-content container">
+      <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span>Contact Us</span></div>
+      <span class="section-tag">Contact Us</span>
+      <h1 class="page-hero-title">Start a Conversation With Us</h1>
+    </div>
+  </div>
+
+  <section style="background:#fff">
+    <div class="contact-grid">
+      <!-- Info Side -->
+      <div class="reveal">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's Discuss Your Requirements</h2>
+        <div class="divider"></div>
+        <p style="font-size:.93rem;color:#4b5563;line-height:1.85;margin-bottom:2rem">Looking to build a strong and reliable workforce? Aivirtrix connects you with pre-screened, skilled professionals across multiple industries. Whether you need permanent hires, contract staffing, or bulk recruitment solutions, our team ensures fast and efficient hiring tailored to your business goals.</p>
+        <div class="info-card">
+          <div class="info-icon">✉️</div>
+          <div><div class="info-title">General Enquiries</div><div class="info-value"><a href="mailto:info@aivirtrix.com">info@aivirtrix.com</a></div></div>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <div><div class="info-title">Phone</div><div class="info-value"><a href="tel:+91XXXXXXXXXX">+1-800-000-0000</a></div></div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div><div class="info-title">Headquarters</div><div class="info-value">Delaware, USA</div></div>
+        </div>
+        <div style="margin-top:2rem;padding:1.5rem;background:linear-gradient(135deg,#eff6ff,#dbeafe);border-radius:8px;border:1px solid rgba(37,99,235,.15)">
+          <div style="font-weight:700;font-size:.85rem;color:#1d4ed8;margin-bottom:.5rem">Response Commitment</div>
+          <p style="font-size:.8rem;color:#4b5563;line-height:1.75">We respond to all business enquiries within 1–2 business days. For urgent matters, please mention in the subject line.</p>
+        </div>
+      </div>
+      <!-- Form Side -->
+      <div class="reveal" style="transition-delay:.15s">
+        <div style="background:#f8f9fb;border:1px solid rgba(0,0,0,.08);border-radius:10px;padding:3rem">
+          <div style="font-family:'Poppins',sans-serif;font-size:1.3rem;font-weight:700;color:#0a0a0a;margin-bottom:1.8rem">Send Us a Message</div>
+          <form id="contactForm" onsubmit="submitForm(event)">
+            <div class="form-row">
+              <div class="form-group"><label>Full Name *</label><input type="text" placeholder="Your full name" required/></div>
+              <div class="form-group"><label>Company / Organisation</label><input type="text" placeholder="Company name"/></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Email Address *</label><input type="email" placeholder="your@email.com" required/></div>
+              <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 XXXXX XXXXX"/></div>
+            </div>
+            <div class="form-group"><label>Enquiry Type *</label>
+              <select required>
+                <option value="">Select enquiry type</option>
+                <option>Hiring / Talent Acquisition</option>
+                <option>Contract Staffing</option>
+                <option>Permanent Placement</option>
+                <option>RPO Solutions</option>
+                <option>Career / Job Enquiry</option>
+                <option>Partnership</option>
+                <option>General Information</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Your Message *</label><textarea placeholder="Tell us about your requirements" required></textarea></div>
+            <button type="submit" class="btn btn-primary" style="width:100%;font-size:.85rem">Send Enquiry →</button>
+          </form>
+          <div id="formSuccess" style="display:none;text-align:center;padding:2rem;background:#eff6ff;border-radius:6px;border:1px solid rgba(37,99,235,.2)">
+            <div style="font-size:2.5rem;margin-bottom:.8rem">✅</div>
+            <div style="font-weight:700;color:#1d4ed8;margin-bottom:.4rem">Message Sent!</div>
+            <div style="font-size:.85rem;color:#4b5563">Thank you. We will respond within 1–2 business days.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT — Light Gray -->
+  <section style="background:#f8f9fb">
+    <div class="container">
+      <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto 3rem">
+        <span class="section-tag">How We Work</span>
+        <h2 class="section-title">What Happens After You Enquire</h2>
+        <div class="divider center"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:1200px;margin:0 auto">
+        <div class="card reveal" style="text-align:center"><div style="width:40px;height:40px;background:#2563eb;border-radius:50%;color:#fff;font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin:0 auto .8rem">1</div><div style="font-weight:700;margin-bottom:.4rem;color:#0a0a0a">We Review</div><div style="font-size:.8rem;color:#6b7280">Your enquiry is reviewed by our team and assigned to the right person.</div></div>
+        <div class="card reveal" style="text-align:center;transition-delay:.08s"><div style="width:40px;height:40px;background:#0a0a0a;border-radius:50%;color:#fff;font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin:0 auto .8rem">2</div><div style="font-weight:700;margin-bottom:.4rem;color:#0a0a0a">Initial Response</div><div style="font-size:.8rem;color:#6b7280">We respond within 1–2 business days with answers or clarifying questions.</div></div>
+        <div class="card reveal" style="text-align:center;transition-delay:.16s"><div style="width:40px;height:40px;background:#2563eb;border-radius:50%;color:#fff;font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin:0 auto .8rem">3</div><div style="font-weight:700;margin-bottom:.4rem;color:#0a0a0a">Screening & Shortlisting</div><div style="font-size:.8rem;color:#6b7280">We conduct detailed screening including skill evaluation, experience validation, and role alignment to ensure only the most suitable candidates are shortlisted.</div></div>
+        <div class="card reveal" style="text-align:center;transition-delay:.24s"><div style="width:40px;height:40px;background:#0a0a0a;border-radius:50%;color:#fff;font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin:0 auto .8rem">4</div><div style="font-weight:700;margin-bottom:.4rem;color:#0a0a0a">Interview Coordination</div><div style="font-size:.8rem;color:#6b7280">Our team schedules and manages interviews, coordinates feedback, and ensures smooth communication between you and the candidates throughout the hiring process.</div></div>
+      </div>
+    </div>
+  </section>
+<footer class="site-footer">
+  <div class="sf-top"><div class="sf-inner">
+    <div class="sf-brand-col">
+      <a class="sf-logo" href="../index.html"><img src="../images/AI-BBG.png" alt="Aivirtrix" class="sf-logo-img"/></a>
+      <p class="sf-tagline">AI-powered staffing and workforce solutions &mdash; connecting employers and job seekers across every industry, anywhere in the world.</p>
+      <div class="sf-social"><a href="#" target="_blank" rel="noopener" aria-label="LinkedIn" class="sf-social-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></div>
+      <div class="sf-contact">
+        <a href="mailto:info@aivirtrix.com" class="sf-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>info@aivirtrix.com</span></a>
+        <a href="tel:+18000000000" class="sf-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+1-800-000-0000</span></a>
+        <div class="sf-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Delaware, USA</span></div>
+      </div>
+    </div>
+    <div class="sf-col"><div class="sf-col-title">Quick Links</div><ul class="sf-links"><li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Our Services</a></li><li><a href="operations.html">Industries We Serve</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="sf-col"><div class="sf-col-title">Industries</div><ul class="sf-links"><li><a href="technical-support.html">Technology &amp; IT</a></li><li><a href="healthcare.html">Healthcare</a></li><li><a href="industrial.html">Light Industrial</a></li><li><a href="operations.html">Engineering &amp; Ops</a></li><li><a href="business-support.html">Corporate Services</a></li><li><a href="customer-service.html">Customer Service</a></li><li><a href="leadership.html">Leadership</a></li></ul></div>
+    <div class="sf-col"><div class="sf-col-title">For Candidates</div><ul class="sf-links" style="margin-bottom:1.8rem"><li><a href="careers.html">Browse Jobs</a></li><li><a href="candidate-login.html">Submit Resume</a></li></ul><div class="sf-col-title">For Employers</div><ul class="sf-links"><li><a href="employer-login.html">Hire Talent</a></li><li><a href="contact.html">Hiring Process</a></li></ul></div>
+    <div class="sf-col"><div class="sf-col-title">Newsletter</div><p class="sf-newsletter-sub">Stay updated with the latest job openings and hiring insights.</p><form class="sf-newsletter-form" onsubmit="sfSubscribe(event)"><input type="email" class="sf-newsletter-input" placeholder="Enter your email" required/><button type="submit" class="sf-newsletter-btn">Subscribe</button></form></div>
+  </div></div>
+  <div class="sf-bottom"><div class="sf-bottom-inner">
+    <div class="sf-copy">&copy; 2026 Aivirtrix. All rights reserved.</div>
+    <div class="sf-legal"><a href="#" onclick="openLegalModal('privacy');return false;">Privacy Policy</a><span class="sf-legal-sep">&middot;</span><a href="#" onclick="openLegalModal('terms');return false;">Terms &amp; Conditions</a></div>
+    <div class="sf-bottom-web">info@aivirtrix.com</div>
+  </div></div>
+</footer>
+<button id="backToTop" style="position:fixed;bottom:2rem;right:2rem;background:#2563eb;color:#fff;border:none;width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer;opacity:0;transition:opacity .3s;z-index:999;box-shadow:0 4px 16px rgba(37,99,235,.4)">&#8679;</button>
+<script src="../js/main.js"></script>
+<script src="../js/vpstore.js"></script>
+<script src="../js/portal-widget.js"></script>
+<script>
+function sfSubscribe(e){e.preventDefault();var btn=e.target.querySelector('.sf-newsletter-btn');btn.textContent='Subscribed!';btn.style.background='#16a34a';e.target.querySelector('.sf-newsletter-input').value='';setTimeout(function(){btn.textContent='Subscribe';btn.style.background='';},3000);}
+var LEGAL_CONTENT={privacy:{icon:'&#128274;',title:'Privacy Policy',sections:[{title:'Data Collection & Use',body:'We respect your privacy and are committed to protecting your personal information. Data is used solely for recruitment and communication.'},{title:'Data Sharing',body:'We do not share your information with third parties without consent, except when required for job placement.'},{title:'Your Rights',body:'You may request access, correction, or deletion of your data. Contact info@aivirtrix.com.'}]},terms:{icon:'&#128203;',title:'Terms & Conditions',sections:[{title:'Acceptance of Terms',body:'By using our website, you agree to comply with our terms and conditions.'},{title:'No Guarantee of Placement',body:'We do not guarantee job placement. Aivirtrix acts as an intermediary between employers and candidates.'},{title:'User Responsibilities',body:'Users are responsible for the accuracy of information they provide.'}]}};
+function openLegalModal(type){var c=LEGAL_CONTENT[type];if(!c)return;document.getElementById('legal-modal-icon').innerHTML=c.icon;document.getElementById('legal-modal-title-text').textContent=c.title;document.getElementById('legal-modal-body').innerHTML=c.sections.map(function(s){return'<div class="legal-section"><div class="legal-section-title">'+s.title+'</div><div class="legal-section-body"><p>'+s.body+'</p></div></div>';}).join('');document.getElementById('legal-modal-backdrop').classList.add('open');document.body.style.overflow='hidden';}
+function closeLegalModal(e){if(e&&e.target!==document.getElementById('legal-modal-backdrop'))return;document.getElementById('legal-modal-backdrop').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLegalModal();});
+</script>
+<div class="legal-modal-backdrop" id="legal-modal-backdrop" onclick="closeLegalModal(event)">
+  <div class="legal-modal" id="legal-modal">
+    <div class="legal-modal-head"><div class="legal-modal-title"><div class="legal-modal-title-icon" id="legal-modal-icon"></div><span id="legal-modal-title-text"></span></div><button class="legal-modal-close" onclick="closeLegalModal()" aria-label="Close">&#10005;</button></div>
+    <div class="legal-modal-body" id="legal-modal-body"></div>
+    <div class="legal-modal-foot"><span class="legal-modal-foot-note">Last updated: January 2026 &middot; Aivirtrix</span><button class="legal-modal-foot-btn" onclick="closeLegalModal()">Got it</button></div>
+  </div>
+</div>
+<script>
+function submitForm(e){e.preventDefault();document.getElementById('contactForm').style.display='none';document.getElementById('formSuccess').style.display='block';}
+</script>
+</body>
+</html>
