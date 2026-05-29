@@ -1,0 +1,29 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+bin/
+obj/
+
+# Config secrets (NEVER commit these)
+Config/AppSettings.config
+Config/ConnectionStrings.config
+
+# Build artifacts
+*.dll
+*.pdb
+*.cache
+
+# Packages
+packages/
+*.nupkg
+
+# Logs
+*.log
+App_Data/
+
+# OS
+.DS_Store
+Thumbs.db

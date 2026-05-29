@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /portal/
+Disallow: /pages/candidate-dashboard.aspx
+Disallow: /pages/employer-dashboard.aspx
+Disallow: /Config/
+Disallow: /App_Code/
+
+Sitemap: https://www.aivirtrix.com/sitemap.xml
